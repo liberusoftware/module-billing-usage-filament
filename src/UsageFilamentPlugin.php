@@ -7,6 +7,7 @@ namespace Liberu\Billing\Usage\Filament;
 use Filament\Contracts\Plugin;
 use Filament\Panel;
 use Liberu\Billing\Usage\Filament\Resources\MeterResource;
+use Liberu\Billing\Usage\Filament\Resources\UsageRecordResource;
 
 final class UsageFilamentPlugin implements Plugin
 {
@@ -17,12 +18,12 @@ final class UsageFilamentPlugin implements Plugin
 
     public function getId(): string
     {
-        return 'liberu-billing-usage';
+        return 'module-billing-usage-filament';
     }
 
     public function register(Panel $panel): void
     {
-        $panel->resources([MeterResource::class]);
+        $panel->resources([MeterResource::class, UsageRecordResource::class]);
     }
 
     public function boot(Panel $panel): void {}
